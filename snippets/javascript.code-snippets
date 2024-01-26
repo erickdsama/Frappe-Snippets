@@ -1,0 +1,65 @@
+{
+    "form": {
+        "prefix": ["frm", "form"],
+        "body": [
+            "frappe.ui.form.on(\"$1\", {",
+            "    ${2|setup,onload,refresh|}(frm) {",
+            "     $0",
+            "    }",
+            "});"
+        ]
+        "description": ""
+    },
+    "query": {
+        "prefix": ["qry", "query"],
+        "body": [
+            "frm.set_query(\"$1\", () => {",
+            "    return {",
+            "        filters: {",
+            "            $2: '$3'",
+            "        }",
+            "    }",
+            "});"
+        ]
+        "description": "query filter for a field"
+    },
+    "prompt": {
+        "prefix": ["prmt", "prompt"],
+        "body": [
+            "frappe.prompt([",
+            "    {",
+            "        fieldname: '$1',",
+            "        fieldtype: '$2',",
+            "        label: '$3',",
+            "    }",
+            "], (values) => {",
+            "    $0",
+            "}, '${4:Submit}');"
+        ]
+        "description": "dialog prompt"
+    },
+    "dialog": {
+        "prefix": ["dlg", "dialog"],
+        "body": [
+            "let d = new frappe.ui.Dialog({",
+            "    title: '$1',",
+            "    fields: [",
+            "    {",
+            "        fieldname: '$2',",
+            "        fieldtype: '${3:Data}',",
+            "        label: '$4',",
+            "    }",
+            "    ],",
+            "    size: '${5|small,large,extra-large|}',",
+            "    primary_action_label: '${6:Submit}',",
+            "    primary_action(values) {",
+            "        $0",
+            "        d.hide();",
+            "    }",
+            "});",
+            "",
+            "d.show();"
+        ]
+        "description": "dialog "
+    }
+}

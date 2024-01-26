@@ -1,5 +1,6 @@
 {
   "name": "frappe-snippets",
+  "publisher": "Erick Samaniego",
   "displayName": "frappe Snippets",
   "description": "Snippets for frappe",
   "version": "0.0.1",
@@ -13,7 +14,11 @@
     "snippets": [
       {
         "language": "python",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/python.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.code-snippets"
       }
     ]
   }

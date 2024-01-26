@@ -10,7 +10,7 @@
     "list with pluck": {
         "prefix": "list",
         "body": [
-            "frappe.db.get_list('$1', pluck='$2')"
+            "frappe.db.get_list('$1', pluck='${2:name}')"
 
         ],
         "description": "Use frappe.db.get_list"
@@ -23,7 +23,7 @@
             "   filters={",
             "       '$3': '$4'",
             "   },",
-            "   as_list=$5",
+            "   as_list=${5:True}",
             ")",
         ],
         "description": "Use frappe.db.get_list"
