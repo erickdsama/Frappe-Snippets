@@ -1,0 +1,57 @@
+{
+    "list": {
+        "prefix": "list",
+        "body": [
+            "frappe.db.get_list('$1')"
+
+        ],
+        "description": "Use frappe.db.get_list"
+    },
+    "list with pluck": {
+        "prefix": "list",
+        "body": [
+            "frappe.db.get_list('$1', pluck='$2')"
+
+        ],
+        "description": "Use frappe.db.get_list"
+    },
+    
+    "list as list": {
+        "prefix": "list",
+        "body": [
+            "frappe.db.get_list('$1',",
+            "   filters={",
+            "       '$3': '$4'",
+            "   },",
+            "   as_list=$5",
+            ")",
+        ],
+        "description": "Use frappe.db.get_list"
+    },
+    }
+    "get value": {
+        "prefix": "value",
+        "body": [
+            "frappe.db.get_value('$1', '$2', $3)",
+
+        ],
+        "description": "Use frappe.db.get_value"
+    },
+    "get value with filters":{
+        "prefix": "value",
+        "body": [
+            "frappe.db.get_value('$1', {'$2': '$3'}, $3)",
+
+        ],
+        "description": "Use frappe.db.get_value with filters"
+    },
+
+    "get value with filters":{
+        "prefix": "value",
+        "body": [
+            "frappe.db.get_value('$1', {'$2': '$3'}, $3)",
+
+        ],
+        "description": "Use frappe.db.get_value with filters"
+    }
+}
