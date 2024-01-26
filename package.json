@@ -1,6 +1,7 @@
 {
   "name": "frappe-snippets",
-  "publisher": "Erick Samaniego",
+  "publisher": "ErickSamaniego",
+  "icon": "icon.jpg",
   "displayName": "frappe Snippets",
   "description": "Snippets for frappe",
   "version": "0.0.1",
@@ -10,6 +11,10 @@
   "categories": [
     "Snippets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erickdsama/Frappe-Snippets"
+  },
   "contributes": {
     "snippets": [
       {

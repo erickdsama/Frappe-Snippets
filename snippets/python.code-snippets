@@ -45,7 +45,6 @@
         ],
         "description": "Use frappe.db.get_value with filters"
     },
-
     "get value with filters":{
         "prefix": "value",
         "body": [
