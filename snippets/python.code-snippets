@@ -1,8 +1,25 @@
 {
+    "doctype": {
+        "prefix": "doc",
+        "body": [
+            "frappe.get_doc('${1:Doctype}', '${2:Name}')",
+            "$0"
+        ],
+        "description": "Use frappe.get_doc"
+    },
+    "doctype with filters": {
+        "prefix": "doc",
+        "body": [
+            "frappe.get_doc('${1:Doctype}', filters={'$2': '$3'})",
+            "$0"
+        ],
+        "description": "Use frappe.get_doc with filters"
+    },
     "list": {
         "prefix": "list",
         "body": [
-            "frappe.db.get_list('$1')"
+            "frappe.db.get_list('${1:Doctype}')",
+            "$0"
 
         ],
         "description": "Use frappe.db.get_list"
@@ -10,8 +27,8 @@
     "list with pluck": {
         "prefix": "list",
         "body": [
-            "frappe.db.get_list('$1', pluck='${2:name}')"
-
+            "frappe.db.get_list('${1:Doctype}', pluck='${2:name}')",
+            "$0"
         ],
         "description": "Use frappe.db.get_list"
     },
@@ -19,38 +36,61 @@
     "list as list": {
         "prefix": "list",
         "body": [
-            "frappe.db.get_list('$1',",
+            "frappe.db.get_list('${1:Doctype}',",
             "   filters={",
             "       '$3': '$4'",
             "   },",
             "   as_list=${5:True}",
             ")",
+            "$0"
         ],
         "description": "Use frappe.db.get_list"
     },
-    }
     "get value": {
-        "prefix": "value",
+        "prefix": ["db", "value"],
         "body": [
-            "frappe.db.get_value('$1', '$2', $3)",
+            "frappe.db.get_value('${1:Doctype}', '$2', '${4:field}')",
+            "$0"
 
         ],
         "description": "Use frappe.db.get_value"
     },
     "get value with filters":{
-        "prefix": "value",
+        "prefix": ["db", "value"],
         "body": [
-            "frappe.db.get_value('$1', {'$2': '$3'}, $3)",
-
-        ],
-        "description": "Use frappe.db.get_value with filters"
-    },
-    "get value with filters":{
-        "prefix": "value",
-        "body": [
-            "frappe.db.get_value('$1', {'$2': '$3'}, $3)",
+            "frappe.db.get_value('${1:Doctype}', {'$2': '$3'}, '${4:field}')",
+            "$0"
 
         ],
         "description": "Use frappe.db.get_value with filters"
     }
+    "Frappe Msgprint": {
+        "prefix": "msgprint",
+        "body": [
+            "frappe.msgprint('${1:Message}')",
+            "$0"
+        ],
+        "description": "Use frappe.msgprint"
+    },
+    "Frappe Msgprint with title": {
+        "prefix": "msgprint",
+        "body": [
+            "frappe.msgprint('${1:Message}', title='${2:Title}')",
+            "$0"
+        ],
+        "description": "Use frappe.msgprint with title"
+    },
+    "Frappe Msgprint with indicator": {
+        "prefix": "msgprint",
+        "body": [
+            "frappe.msgprint(",
+            "   msg='${1:Message}'",
+            "   title='${2:Title}'",
+            "   indicator='${3:Indicator}'", 
+            ")",
+            "$0"
+        ],
+        "description": "Use frappe.msgprint with indicator"
+    },
+
 }
